@@ -67,7 +67,7 @@ pipeline {
         stage('Delete Docker Container 2338') {
             steps {
                 script {
-                    docker.rm("2338")
+                    dockerImage.rm("2338")
                 }
             }
         }
