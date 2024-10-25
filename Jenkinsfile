@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
 
-                    dockerImage = docker.run("--name 2338")
+                    dockerImage = docker.run("--name 2338 2338")
                     dockerImage = docker.stop("2338")
                     dockerImage = docker.rm("2338")
                 }
