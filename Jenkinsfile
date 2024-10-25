@@ -8,15 +8,15 @@ pipeline {
             }
         }
 
-        stage('Delete Docker Container 2338') {
-            steps {
-                bat 'docker rm 2338'
-            }
-        }
-
         stage('Create & Run Docker Container 2338') {
             steps {
                 bat 'docker run --name 2338 sher4win/2338'
+            }
+        }
+
+        stage('Delete Docker Container 2338') {
+            steps {
+                bat 'docker rm 2338'
             }
         }       
     }
