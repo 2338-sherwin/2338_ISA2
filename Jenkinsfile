@@ -24,7 +24,7 @@ pipeline {
         stage('Create & Run Docker Container 2338') {
             steps {
                 script {
-                    dockerImage.run("--name 2338")
+                    dockerImage.run("--name 2338 2338")
                 }
             }
         }
