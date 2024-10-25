@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Git Repo'){
             steps {
                 script {
-                    git clone https://github.com/2338-sherwin/2338_ISA2.git
+                    git clone "https://github.com/2338-sherwin/2338_ISA2.git"
                 }
             }
         }
