@@ -10,12 +10,25 @@ pipeline {
             }
         }
 
+        stage('Create & Run Docker Container 2338') {
+            steps {
+                script {
+                    dockerImage = docker.run("--name 2338 2338")
+                }
+            }
+        }
+
+        stage('Stop Docker Container 2338') {
+            steps {
+                script {
+                    dockerImage = docker.stop("2338")
+                }
+            }
+        }
+
         stage('Delete Docker Container 2338') {
             steps {
                 script {
-
-                    dockerImage = docker.run("--name 2338 2338")
-                    dockerImage = docker.stop("2338")
                     dockerImage = docker.rm("2338")
                 }
             }
