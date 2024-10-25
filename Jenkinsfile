@@ -59,7 +59,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    dockerImage.run('-d -p 7070:8080')
+                    dockerImage.run('--name 2338 sher4win/docker-images-via-jenkins')
                 }
             }
         }
