@@ -13,7 +13,7 @@ pipeline {
         stage('Create Docker Container 2338') {
             steps {
                 script {
-                    dockerImage = docker.run("--name 2338 2338")
+                    dockerImage.run("--name 2338 2338")
                 }
             }
         }
