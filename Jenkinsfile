@@ -1,20 +1,22 @@
 pipeline {
     agent any
     
-    stages {
+    stages {        
         stage('Build Docker Image') {
             steps {
-                script {
-                    dockerImage = docker.build("sher4win/docker-images-via-jenkins")
-                }
+                bat 'docker image -t sher4win/2338'
             }
         }
-        
-        stage('Run Docker Container') {
+
+        stage('Create Docker Container 2338') {
             steps {
-                script {
-                    dockerImage.run('-d -p 7070:8080')
-                }
+                bat 'docker run --name 2338 sher4win/2338'
+            }
+        }
+
+        stage('Stop Docker Container 2338') {
+            steps {
+                bat 'docker rm 2338'
             }
         }
     }
